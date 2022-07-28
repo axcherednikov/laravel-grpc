@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace App\Grpc\Client;
 
-use App\Grpc\Gen\Service\Request;
+
 use Grpc\BaseStub;
+use Grpc\Service\Test\Request;
 use Grpc\UnaryCall;
 
 class EchoClient extends BaseStub

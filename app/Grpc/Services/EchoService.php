@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Grpc\Services;
 
-use App\Grpc\Gen\Service\EchoInterface;
-use App\Grpc\Gen\Service\Request;
-use App\Grpc\Gen\Service\Response;
+use Grpc\Service\Test\Request;
+use Grpc\Service\Test\Response;
+use Grpc\Service\Test\TestInterface;
 use Spiral\RoadRunner\GRPC\ContextInterface;
 
-class EchoService implements EchoInterface
+class EchoService implements TestInterface
 {
     public function Ping(ContextInterface $ctx, Request $in): Response
     {

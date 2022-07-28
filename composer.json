@@ -30,7 +30,8 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "GPBMetadata\\": "GPBMetadata/"
+            "Grpc\\": "gen/Grpc/",
+            "GPBMetadata\\": "gen/GPBMetadata/"
         }
     },
     "autoload-dev": {

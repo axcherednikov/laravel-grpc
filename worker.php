@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 use App\Contracts\Grpc\GrpcKernelContract;
 use App\Contracts\Grpc\ServiceInvokerContract;
-use App\Grpc\Gen\Service\EchoInterface;
 use App\Grpc\GrpcKernel;
 use App\Grpc\LaravelServiceInvoker;
 use App\Grpc\Services\EchoService;
+use Grpc\Service\Test\TestInterface;
 use Illuminate\Foundation\Application;
 
 ini_set('display_errors', 'stderr');
@@ -21,10 +21,10 @@ $app = require_once __DIR__ . '/bootstrap/app.php';
 
 $app->singleton(GrpcKernelContract::class, GrpcKernel::class);
 $app->singleton(ServiceInvokerContract::class, LaravelServiceInvoker::class);
-$app->singleton(EchoInterface::class, EchoService::class);
+$app->singleton(TestInterface::class, EchoService::class);
 
 $kernel = $app->make(GrpcKernel::class);
 
-$kernel->registerService(EchoInterface::class, new EchoService());
+$kernel->registerService(TestInterface::class, new EchoService());
 
 $kernel->serve();
