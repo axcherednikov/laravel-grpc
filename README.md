@@ -7,6 +7,7 @@ $ composer install
 $ cp .env.example .env
 $ php artisan key:generate
 $ php artisan octane:install --server=roadrunner # make binary 
+$ cp .rr.yaml.example .rr.yaml
 ```
 
 ---
