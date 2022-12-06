@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace App\Grpc\Services;
 
-use Grpc\Service\Test\Request;
-use Grpc\Service\Test\Response;
-use Grpc\Service\Test\TestInterface;
+use Service\EchoInterface;
+use Service\Message;
 use Spiral\RoadRunner\GRPC\ContextInterface;
 
-class EchoService implements TestInterface
+class EchoService implements EchoInterface
 {
-    public function Ping(ContextInterface $ctx, Request $in): Response
+    public function Ping(ContextInterface $ctx, Message $in): Message
     {
-        $out = new Response();
+        $out = new Message();
 
-        return $out->setTest(date('Y-m-d H:i:s') . ': PONG');
+        return $out->setMsg(date('Y-m-d H:i:s') . ': PONG');
     }
 }

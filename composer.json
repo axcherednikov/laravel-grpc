@@ -30,7 +30,7 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Grpc\\": "gen/Grpc/",
+            "Service\\": "gen/Service/",
             "GPBMetadata\\": "gen/GPBMetadata/"
         }
     },
